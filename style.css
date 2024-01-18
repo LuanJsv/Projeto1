@@ -84,6 +84,9 @@ padding = preenchimento*/
     margin: 4px auto;
 
 }
+#switch button:hover{
+    outline: 8px  solid var(--highlight-color);
+}
 
 #switch button {
     width: 32px;
@@ -97,6 +100,8 @@ padding = preenchimento*/
     z-index: 1;
     transform: translateY(-50%);
     top: 50%;
+
+    animation: slide-out 0.2s;
 }
 
 #switch span {
@@ -111,8 +116,7 @@ padding = preenchimento*/
 }
 
 .Light #switch button {
-    right: 0;
-    left: initial;
+animation: slide-in 0.4s forwards;
 }
 
 /* mexendo na parte de links*/
@@ -183,5 +187,21 @@ footer {
     }
     .Light{
     --bg-url: url(./bg-desktop-light.jpg);
+    }
+}
+@keyframes slide-in{
+from{
+    left: 0;
+}
+to{
+    left: 50%;
+}
+}
+@keyframes slide-out{
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
     }
 }
